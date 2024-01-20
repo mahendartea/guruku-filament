@@ -13,6 +13,7 @@ return new class extends Migration
     {
         Schema::create('lecturers', function (Blueprint $table) {
             $table->id();
+            $table->foreignId('user_id')->constrained('users');
             $table->integer('nidn')->unsigned();
             $table->string('name', 50)->nullable();
             $table->string('prodi', 50)->nullable();
@@ -29,6 +30,7 @@ return new class extends Migration
     {
         Schema::table('lecturers', function (Blueprint $table) {
             $table->dropForeign(['institution_id']);
+            $table->dropForeign(['user_id']);
         });
         Schema::dropIfExists('lecturers');
     }
