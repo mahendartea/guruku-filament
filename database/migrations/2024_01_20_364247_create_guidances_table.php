@@ -16,7 +16,7 @@ return new class extends Migration
             $table->foreignId('student_id')->references('id')->on('students')->cascadeOnDelete();
             $table->foreignId('lecturer_id')->references('id')->on('lecturers')->cascadeOnDelete();
             $table->string('judul', 100)->nullable()->default('text');
-            $table->text('description')->nullable()->default('text');
+            $table->text('description')->nullable();
             $table->tinyInteger('pertemuan')->nullable();
             $table->date('tanggal_bimbingan')->nullable();
             $table->timestamps();

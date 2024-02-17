@@ -173,7 +173,7 @@ class PostResource extends Resource
                     ->sortable(),
 
                 Tables\Columns\TextColumn::make('published_at')
-                    ->dateTime()
+                    ->since()
                     ->sortable()
                     ->toggleable(isToggledHiddenByDefault: true),
 

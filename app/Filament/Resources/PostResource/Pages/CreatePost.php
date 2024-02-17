@@ -11,4 +11,9 @@ class CreatePost extends CreateRecord
      * The resource model.
      */
     protected static string $resource = PostResource::class;
+
+    protected function getRedirectUrl(): string
+    {
+        return $this->getResource()::getUrl('index');
+    }
 }
